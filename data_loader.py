@@ -1,4 +1,5 @@
 import io
+import os
 import numpy as np
 import pandas as pd
 import tensorflow as tf
@@ -55,7 +56,7 @@ def read_csv(csv_path, image_dir, is_training):
 
     df = pd.read_csv(csv_path)
     df['image_path'] = df['Image ID'].map(
-        lambda x: f'{image_dir}/{x}.jpg')
+        lambda x: os.path.join(image_dir, f'{x}.jpg'))
 
     if is_training:
         df = df.sample(frac=1, random_state=1)

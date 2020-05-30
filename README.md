@@ -28,7 +28,7 @@ $ python train.py \
     --train_csv gs://<bucket_name>/AVA_train.csv \
     --validation_csv gs://<bucket_name>/AVA_validation.csv \
     --image_dir gs://<bucket_name>/images \
-    --batch_size 32 \
+    --batch_size 512 \
     --checkpoint_dir checkpoints/$(date "+%Y%m%d%H%M%S") \
     --log_dir gs://<bucket_name>/logs/$(date "+%Y%m%d%H%M%S")
 ```
